@@ -5,7 +5,6 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "types": ["node"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -13,19 +12,23 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    
+    /* JSX Transform - CRITICAL FOR REACT 19 */
     "jsx": "react-jsx",
-
-    /* Path mapping */
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    },
+    "jsxImportSource": "react",
 
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Path Aliases - Matches your vite.config.ts */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
-  "include": ["src", "vite.config.ts"]
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
