@@ -10,8 +10,8 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   plugins: [
     react({
-      // This is the specific fix for "React is not defined"
-      jsxRuntime: 'automatic', 
+      // This is the CRITICAL fix for "React is not defined"
+      jsxRuntime: 'automatic',
     }), 
     tailwindcss()
   ],
