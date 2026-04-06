@@ -10,7 +10,6 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   plugins: [
     react({
-      // This is the CRITICAL fix for "React is not defined"
       jsxRuntime: 'automatic',
     }), 
     tailwindcss()
@@ -19,14 +18,9 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "src"),
     },
-  },s
-});
-import { defineConfig } from 'vite'
-
-export default defineConfig({
-  // If your site is at the root of the domain, base should be '/'
+  },
   base: '/', 
   build: {
     outDir: 'dist',
   },
-})
+});
