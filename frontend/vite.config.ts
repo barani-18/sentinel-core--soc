@@ -19,5 +19,14 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "src"),
     },
-  },
+  },s
 });
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  // If your site is at the root of the domain, base should be '/'
+  base: '/', 
+  build: {
+    outDir: 'dist',
+  },
+})
